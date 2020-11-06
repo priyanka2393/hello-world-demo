@@ -1,6 +1,6 @@
 #!groovy
 pipeline {
-    agent {label 'docker-agent'}
+   // agent {label 'docker-agent'}
     stages {
         stage('Get Source') {
           // copy source code from local file system and test
