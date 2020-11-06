@@ -1,8 +1,7 @@
 #!groovy
 pipeline {
    // agent {label 'docker-agent'}
-   agent {
-        docker { image 'node:14-alpine' }
+   agent none
    }
     stages {
         stage('Get Source') {
