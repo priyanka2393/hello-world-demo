@@ -2,7 +2,7 @@
 pipeline {
    // agent {
       //  docker { image 'node:14-alpine' }
-    }
+   // }
     stages {
         stage('Get Source') {
           // copy source code from local file system and test
