@@ -1,8 +1,6 @@
 #!groovy
 pipeline {
-    agent {
-        docker { image 'python:3.7.2' }
-    }
+    agent {label 'docker-jnlp'}
     stages {
         stage('Get Source') {
           // copy source code from local file system and test
