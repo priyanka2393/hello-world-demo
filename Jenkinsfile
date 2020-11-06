@@ -11,8 +11,9 @@ pipeline {
                git ('https://github.com/priyanka2393/hello-world-demo.git')
                if (!fileExists("Dockerfile")) {
                error('Dockerfile missing.')
+               }
                '''
-         }
+      
        }
     }
        stage('Build Docker') {
