@@ -1,20 +1,21 @@
 #!groovy
 pipeline {
-    agent {
-        docker { image 'node:14-alpine' }
+   // agent {
+      //  docker { image 'node:14-alpine' }
     }
     stages {
         stage('Get Source') {
           // copy source code from local file system and test
          // for a Dockerfile to build the Docker image
             steps{
+               docker.image('maven:3.3.3-jdk-8').inside {
                sh'''
                git ('https://github.com/priyanka2393/hello-world-demo.git')
                if (!fileExists("Dockerfile")) {
                error('Dockerfile missing.')
                }
                '''
-      
+         }
        }
     }
        stage('Build Docker') {
