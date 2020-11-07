@@ -8,7 +8,7 @@ agent any
 stages {
 stage('Cloning Git') {
 steps {
-git([url: 'https://github.com/priyanka2393/hello-world-demo.git', branch: 'master'])
+git( 'https://github.com/priyanka2393/hello-world-demo.git)
 }
 }
 stage('Building image') {
