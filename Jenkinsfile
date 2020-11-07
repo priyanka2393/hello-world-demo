@@ -31,7 +31,7 @@ dockerImage.push('latest')
 stage('Run as a container') {
 steps{
 script {
-bat "docker run -p 8000:8000 --name flask_app -d priyankat23/flaskapp"
+bat "docker run -p 8000:8000 --name flask_cont -d priyankat23/flaskapp"
  }
 }
 }
