@@ -8,7 +8,7 @@ pipeline {
           // copy source code from local file system and test
          // for a Dockerfile to build the Docker image
             steps{
-               sh "git ('https://github.com/priyanka2393/hello-world-demo.git')"
+               git ('https://github.com/priyanka2393/hello-world-demo.git')
 
        }
     }
