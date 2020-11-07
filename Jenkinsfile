@@ -1,6 +1,6 @@
 #!groovy
 pipeline {
-    agent {image 'alpine'}
+    agent {label 'docker-jnlp'}
    
 
     stages {
