@@ -16,7 +16,6 @@ script {
 dockerImage = docker build -t flask-app .
 }
 }
-}
 stage('Deploy Image') {
 steps{
 script {
