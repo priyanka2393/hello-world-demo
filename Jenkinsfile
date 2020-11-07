@@ -1,6 +1,6 @@
 #!groovy
 pipeline {
-    agent {label 'docker-agent'}
+    agent {image 'alpine'}
    
 
     stages {
