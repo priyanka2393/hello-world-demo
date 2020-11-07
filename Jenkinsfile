@@ -1,6 +1,6 @@
 pipeline {
 environment {
-imagename = "alpine"
+//imagename = "alpine"
 registryCredential = '2393'
 dockerImage = ''
 }
@@ -14,7 +14,7 @@ git([url: 'https://github.com/priyanka2393/hello-world-demo.git', branch: 'maste
 stage('Building image') {
 steps{
 script {
-dockerImage = docker.build imagename
+dockerImage = docker build -t flask-app .
 }
 }
 }
