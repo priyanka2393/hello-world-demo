@@ -8,10 +8,10 @@ pipeline {
           // copy source code from local file system and test
          // for a Dockerfile to build the Docker image
             steps{
-               git ('https://github.com/priyanka2393/hello-world-demo.git')
-               if (!fileExists("Dockerfile")) {
+               sh "git ('https://github.com/priyanka2393/hello-world-demo.git')"
+               sh "if (!fileExists("Dockerfile")) {
                error('Dockerfile missing.')
-               }
+               }"
                
          
        }
