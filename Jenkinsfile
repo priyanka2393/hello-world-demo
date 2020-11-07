@@ -1,32 +1,38 @@
-#!groovy
 pipeline {
-    agent none
-   
-
-    stages {
-        stage('Get Source') {
-            agent{
-                docker{
-                    image 'ubuntu:latest'
-                }
-            }
-          // copy source code from local file system and test
-         // for a Dockerfile to build the Docker image
-            steps{
-               git ('https://github.com/priyanka2393/hello-world-demo.git')
-
-       }
-    }
-       stage('Build Docker') {
-         // build the docker image from the source code using the BUILD_ID parameter in image name
-           steps{
-               sh "docker build -t flask-app ."
-      }
-   }
-       stage("run docker container"){
-           steps{
-             sh "docker run -p 8000:8000 --name flask-app -d flask-app "
-           }
-       }
-    }
+environment {
+imagename = "ubuntu:latest"
+registryCredential = '2393'
+dockerImage = ''
+}
+agent any
+stages {
+stage('Cloning Git') {
+steps {
+git([url: 'https://github.com/priyanka2393/hello-world-demo.git', branch: 'master'])
+}
+}
+stage('Building image') {
+steps{
+script {
+dockerImage = docker.build imagename
+}
+}
+}
+stage('Deploy Image') {
+steps{
+script {
+docker.withRegistry( '', registryCredential ) {
+dockerImage.push("$BUILD_NUMBER")
+dockerImage.push('latest')
+}
+}
+}
+}
+stage('Remove Unused docker image') {
+steps{
+sh "docker rmi $imagename:$BUILD_NUMBER"
+sh "docker rmi $imagename:latest"
+}
+}
+}
 }
