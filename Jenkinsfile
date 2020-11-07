@@ -31,7 +31,8 @@ dockerImage.push('latest')
 stage('Remove Unused docker image') {
 steps{
 script {
-docker run -p 8000:8000 --name priyankat23/flask-app -d priyankat23/flask-app
+docker.image('priyankat23/flaskapp').withRun('-p 8000:8000') 
+//  -p 8000:8000 --name priyankat23/flask-app -d priyankat23/flask-app
 }
 }
 }
