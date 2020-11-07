@@ -1,11 +1,7 @@
 #!groovy
 pipeline {
-   // agent {label 'docker-agent'}
-   agent {
-      docker {
-            image 'ubuntu:latest'
-      }
-   }
+    agent {label 'docker-agent'}
+   
 
     stages {
         stage('Get Source') {
