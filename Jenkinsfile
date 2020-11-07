@@ -1,7 +1,7 @@
 pipeline {
 environment {
 imagename = "priyankat23/flaskapp"
-registryCredential = '2393'
+registryCredential = 'priyankat23'
 dockerImage = ''
 }
 agent any
