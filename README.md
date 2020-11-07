@@ -2,8 +2,7 @@
 Dockerized hello-world python application on Jenkins pipeline
 
 ## Console Output
-'''
-
+```
 Started by user Priyanka T. 
 Obtained Jenkinsfile from git https://github.com/priyanka2393/hello-world-demo
 Running in Durability level: MAX_SURVIVABILITY
@@ -241,4 +240,4 @@ b4041b24fb109b083e77dcf49e35bd51699da66539278e13ad9cbfd1e58b0c04
 [Pipeline] // node
 [Pipeline] End of Pipeline
 Finished: SUCCESS
-'''
+```
