@@ -5,6 +5,7 @@ pipeline {
       docker {
             image 'ubuntu:latest'
       }
+   }
 
     stages {
         stage('Get Source') {
