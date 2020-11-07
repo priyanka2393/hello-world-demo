@@ -1,7 +1,11 @@
 # hello-world-demo
 Dockerized hello-world python application on Jenkins pipeline
 
-## Console Output
+## **Pipeline**
+
+![Pipeline](Pipeline_stages.JPG)
+
+## **Console Output**
 ```
 Started by user Priyanka T. 
 Obtained Jenkinsfile from git https://github.com/priyanka2393/hello-world-demo
