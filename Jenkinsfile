@@ -1,6 +1,5 @@
 pipeline {
 environment {
-//imagename = "alpine"
 registryCredential = '2393'
 dockerImage = ''
 }
