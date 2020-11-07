@@ -9,11 +9,7 @@ pipeline {
          // for a Dockerfile to build the Docker image
             steps{
                sh "git ('https://github.com/priyanka2393/hello-world-demo.git')"
-               sh "if (!fileExists("Dockerfile")) {
-               error('Dockerfile missing.')
-               }"
-               
-         
+
        }
     }
        stage('Build Docker') {
