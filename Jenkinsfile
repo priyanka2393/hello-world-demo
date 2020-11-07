@@ -31,7 +31,7 @@ dockerImage.push('latest')
 stage('Remove Unused docker image') {
 steps{
 script {
-bat "docker run -p 8000:8000 --name flaskapp -d"
+bat "docker run -p 8000:8000 --name flaskapp -d priyankat23/flaskapp"
  }
 }
 }
