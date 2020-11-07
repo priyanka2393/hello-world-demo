@@ -1,5 +1,6 @@
 pipeline {
 environment {
+//imagename = "yenigul/hacicenkins"
 registryCredential = '2393'
 dockerImage = ''
 }
@@ -13,7 +14,8 @@ git([url: 'https://github.com/priyanka2393/hello-world-demo.git', branch: 'maste
 stage('Building image') {
 steps{
 script {
-dockerImage = docker build -t flask-app .
+sh "docker build -t flask-app ."
+}
 }
 }
 stage('Deploy Image') {
