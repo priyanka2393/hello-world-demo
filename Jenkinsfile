@@ -1,10 +1,15 @@
 #!groovy
 pipeline {
-    agent {label 'docker-jnlp'}
+    agent none
    
 
     stages {
         stage('Get Source') {
+            agent{
+                docker{
+                    image 'ubuntu:latest'
+                }
+            }
           // copy source code from local file system and test
          // for a Dockerfile to build the Docker image
             steps{
