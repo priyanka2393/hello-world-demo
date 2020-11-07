@@ -1,7 +1,7 @@
 #!groovy
 pipeline {
    // agent {label 'docker-agent'}
-   agent none
+   agent any
 
     stages {
         stage('Get Source') {
