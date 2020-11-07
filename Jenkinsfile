@@ -30,7 +30,7 @@ dockerImage.push('latest')
 }
 stage('Remove Unused docker image') {
 steps{
-sh "docker run -p 8000:8000 --name flask-app -d flask-app"
+sh "docker run -p 8000:8000 --name priyankat23/flask-app -d priyankat23/flask-app"
 }
 }
 }
