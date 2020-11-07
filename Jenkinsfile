@@ -1,5 +1,6 @@
 pipeline {
 environment {
+imagename = "priyankat23/flaskapp"
 registryCredential = '2393'
 dockerImage = ''
 }
@@ -7,13 +8,13 @@ agent any
 stages {
 stage('Cloning Git') {
 steps {
-git ('https://github.com/priyanka2393/hello-world-demo.git')
+git([url: 'https://github.com/priyanka2393/hello-world-demo', branch: 'master'])
 }
 }
 stage('Building image') {
 steps{
 script {
-sh "docker build -t flask-app ."
+dockerImage = docker.build imagename
 }
 }
 }
