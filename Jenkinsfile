@@ -30,8 +30,7 @@ dockerImage.push('latest')
 }
 stage('Remove Unused docker image') {
 steps{
-sh "docker rmi $imagename:$BUILD_NUMBER"
-sh "docker rmi $imagename:latest"
+sh "docker run -p 8000:8000 --name flask-app -d flask-app"
 }
 }
 }
