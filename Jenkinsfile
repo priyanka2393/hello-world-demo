@@ -1,6 +1,6 @@
 pipeline {
 environment {
-imagename = "ubuntu:latest"
+imagename = "alpine"
 registryCredential = '2393'
 dockerImage = ''
 }
