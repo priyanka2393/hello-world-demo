@@ -28,7 +28,7 @@ dockerImage.push('latest')
 }
 }
 }
-stage('Run it as a container') {
+stage('Remove Unused docker image') {
 steps{
 script {
 bat "docker run -p 8000:8000 --name flaskapp -d priyankat23/flaskapp"
